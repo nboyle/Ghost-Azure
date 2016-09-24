@@ -1,0 +1,164 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+    {{^has tag="left, right"}}
+        <div class="site-sub-content">
+            <div class="container">
+                <div class="page-content">
+                    <article class="page">
+                        <h1 class="page-title">{{title}}</h1>
+                        <div class="page-content-bottom">
+                            {{content}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    {{/has}}
+    {{#has tag="right"}}
+        <div class="site-sub-content">
+            <div class="container">
+                <article class="page">
+                    <div class="row">
+                        {{! LEFT CONTENT START }}
+                        <div class="col-sm-8 col-xs-12 left-content">
+                            {{! POST LIST START }}
+                            <div class="post-list single-list">
+                                {{! POST START }}
+                                <article class="post format-standard">
+                                    <div class="post-wrapper">
+                                        <h1 class="page-title">{{title}}</h1>
+                                        <div class="page-content-bottom">
+                                           {{content}}
+                                        </div>
+                                    </div>
+                                </article>
+                                {{! POST END }}
+                            </div>
+                            {{! POST LIST END }}
+                        </div>
+                        {{! LEFT CONTENT END }}
+                        {{! RIGHT CONTENT START }}
+                        <div class="col-sm-4 col-xs-12 right-content fixedrightSidebar">
+                            {{! SIDEBAR START }}
+                            <aside class="sidebar-general sidebar">
+                                {{! WIDGET START }}
+                                {{> "widgets/last-posts"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/tags"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/instagram"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/categories"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/newsletter"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/social-media"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/advertisement"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/facebook"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/twitter"}}
+                                {{! WIDGET END }}
+                            </aside>
+                            {{! SIDEBAR END }}
+                        </div>
+                        {{! RIGHT CONTENT END }}
+                    </div>
+                </article>
+            </div>
+        </div>
+    {{/has}}
+    {{#has tag="left"}}
+        <div class="site-sub-content">
+            <div class="container">
+                <article class="page">
+                    <div class="row">
+                        {{! LEFT CONTENT START }}
+                        <div class="col-sm-8 col-xs-12 left-content pull-right">
+                            {{! POST LIST START }}
+                            <div class="post-list single-list">
+                                {{! POST START }}
+                                <article class="post format-standard">
+                                    <div class="post-wrapper">
+                                        <h1 class="page-title">{{title}}</h1>
+                                        <div class="page-content-bottom">
+                                           {{content}}
+                                        </div>
+                                    </div>
+                                </article>
+                                {{! POST END }}
+                            </div>
+                            {{! POST LIST END }}
+                        </div>
+                        {{! LEFT CONTENT END }}
+                        {{! RIGHT CONTENT START }}
+                        <div class="col-sm-4 col-xs-12 right-content fixedrightSidebar">
+                            {{! SIDEBAR START }}
+                            <aside class="sidebar-general sidebar">
+                                {{! WIDGET START }}
+                                {{> "widgets/last-posts"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/tags"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/instagram"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/categories"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/newsletter"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/social-media"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/advertisement"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/facebook"}}
+                                {{! WIDGET END }}
+
+                                {{! WIDGET START }}
+                                {{> "widgets/twitter"}}
+                                {{! WIDGET END }}
+                            </aside>
+                            {{! SIDEBAR END }}
+                        </div>
+                        {{! RIGHT CONTENT END }}
+                    </div>
+                </article>
+            </div>
+        </div>
+    {{/has}}
+{{/post}}
