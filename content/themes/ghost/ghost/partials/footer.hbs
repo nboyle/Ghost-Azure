@@ -1,0 +1,74 @@
+{{! FOOTER START }}
+<footer class="footer">
+	<div class="container">
+		{{! FOOTER WIDGETS START }}
+		<aside class="sidebar-footer sidebar">
+			<div class="row">
+				{{! WIDGET START }}
+				{{#if @labs.publicAPI}}
+					<div class="col-sm-4 col-xs-12">
+						<div class="sidebar-footer-wrap widget-box">
+							<div class="mulada-latest-posts-widget">
+								<div class="widget-title">
+									<h4>Latest Posts</h4>
+								</div>
+								<div class="widget-content">
+									<div class="mulada-latest-posts-widget mulada-post-popular-posts-widget">
+										<ul>
+											{{#get "posts" limit="3" include="tags"}}
+												{{#foreach posts}}
+													<li>
+														{{#if image}}
+															<a class="image" href="{{url}}" style="background-image:url({{image}});"></a>
+														{{/if}}
+														<div class="desc">
+															{{#foreach tags}}
+																<a class="category" href="{{url}}">{{name}}</a>
+															{{/foreach}}
+															<h3><a href="{{url}}">{{title}}</a></h3>
+															<time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
+														</div>
+													</li>
+												{{/foreach}}
+											{{/get}}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/if}}
+				{{! WIDGET END }}
+				{{! WIDGET START }}
+				<div class="col-sm-4 col-xs-12">
+					<div class="sidebar-general-wrap widget-box">
+						<div class="widget-content" >
+                            <div class="text-center">
+                                {{> "widgets/facebook"}}
+                            </div>
+						</div>
+					</div>
+				</div>
+				{{! WIDGET END }}
+				{{! WIDGET START }}
+				<div class="col-sm-4 col-xs-12">
+					<div class="sidebar-footer-wrap widget-box">
+						<div class="widget-content">
+							<div class="text-center">
+								<a href="#"><img src="{{asset "img/ads.jpg"}}" alt="Advertisement" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{! WIDGET END }}
+			</div>
+		</aside>
+		{{! FOOTER WIDGETS END }}
+		{{! COPYRIGHT START }}
+		<div class="copyright">
+			<p>&copy; {{date format="YYYY"}} {{@blog.title}}. All Right Reserved.</p>
+		</div>
+		{{! COPYRIGHT END }}
+	</div>
+</footer>
+{{! FOOTER END }}

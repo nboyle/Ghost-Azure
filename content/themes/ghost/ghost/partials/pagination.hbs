@@ -1,0 +1,11 @@
+<div class="post-pagination">
+	<ul>
+		{{#if prev}}
+			<li><a href="{{page_url prev}}">&lt;</a></li>
+		{{/if}}
+		<li><span>Page {{page}} of {{pages}}</span></li>
+		{{#if next}}
+			<li><a href="{{page_url next}}">&gt;</a></li>
+		{{/if }}
+	</ul>
+</div>
