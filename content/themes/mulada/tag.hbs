@@ -1,0 +1,80 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! If we have a tag cover, display that - else blog cover - else nothing }}
+<div class="site-sub-content">
+    <div class="container">
+            {{! CATEGORY TITLE START }}
+            <section class="category-archive-title">
+            <h1>Tag: <span>{{tag.name}}</span></h1>
+            <p>
+                {{#if tag.description}}
+                        {{tag.description}}
+                    {{else}}
+                        A {{pagination.total}}-post collection
+                {{/if}}
+            </p>
+            </section>
+            {{! CATEGORY TITLE END }}
+        <div class="row">
+            {{! LEFT CONTENT START }}
+            <div class="col-sm-8 col-xs-12 left-content">
+                {{! POST LIST START }}
+                <div class="category-post-list post-list">
+                    {{! POST START }}
+                    {{! The tag below includes the post loop - partials/loop.hbs }}
+                    {{> "loop"}}
+                    {{! POST END }}
+                </div>
+                {{! POST LIST END }}
+                {{! POST PAGINATION START }}
+                {{ pagination }}
+                {{! POST PAGINATION END }}
+            </div>
+            {{! LEFT CONTENT END }}
+            {{! RIGHT CONTENT START }}
+            <div class="col-sm-4 col-xs-12 right-content fixedrightSidebar">
+                {{! SIDEBAR START }}
+                <aside class="sidebar-general sidebar">
+                    {{! WIDGET START }}
+                    {{> "widgets/last-posts"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/tags"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/instagram"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/categories"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/newsletter"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/social-media"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/advertisement"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/facebook"}}
+                    {{! WIDGET END }}
+
+                    {{! WIDGET START }}
+                    {{> "widgets/twitter"}}
+                    {{! WIDGET END }}
+                </aside>
+                {{! SIDEBAR END }}
+            </div>
+            {{! RIGHT CONTENT END }}
+        </div>
+    </div>
+</div>

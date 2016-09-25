@@ -1,0 +1,48 @@
+<div class="menu-area">
+	<div class="container">
+		<nav class="navbar">
+			{{! MOBILE MENU START }}
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			{{! MENU LIST START }}
+			{{! MOBILE MENU END }}
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					{{#foreach navigation}}
+						 <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+					{{/foreach}}
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Features</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="/about-me">About Me</a></li>
+							<li><a href="/standard-page">Standard Page</a></li>
+							<li><a href="/page-left-sidebar">Page Left Sidebar</a></li>
+							<li><a href="/page-right-sidebar">Page Right Sidebar</a></li>
+							<li><a href="/author/lou-lucas">Author Page</a></li>
+							<li><a href="/404">404 Page</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Post Formats</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="/six-things-we-are-loving-about-lfw">Standard Post</a></li>
+							<li><a href="/editors-love-letter">Video Post</a></li>
+							<li><a href="/5-luxury-travel-alternatives-2">Quote Post</a></li>
+							<li><a href="/oscar-nominees-2016-by-numbers">Audio Post</a></li>
+							<li><a href="/10-coolest-things-in-the-world-this-week">Gallery Post</a></li>
+						</ul>
+					</li>
+					<li><a href="/about-me">About Me</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+			{{! MENU LIST END }}
+		</nav>
+	</div>
+</div>

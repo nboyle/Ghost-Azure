@@ -1,0 +1,220 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+	the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+<div class="site-sub-content">
+	<div class="container">
+		<div class="row">
+			{{! LEFT CONTENT START }}
+			<div class="col-sm-8 col-xs-12 left-content">
+				{{! POST LIST START }}
+				<div class="post-list single-list">
+					{{! POST START }}
+					<article class="post format-standard">
+						<div class="post-wrapper">
+							<div class="post-header">
+								<h2>{{title}}</h2>
+								<div class="categories">
+									{{#foreach tags}}
+										<a class="category" href="{{url}}">{{name}}</a>
+									{{/foreach}}
+								</div>
+								<ul class="post-information">
+									{{#author}}
+										<li class="author">By <a href="{{url}}">{{name}}</a></li>
+									{{/author}}
+									<li class="seperate"></li>
+									<li class="date">{{date format="MMMM DD, YYYY"}}</li>
+									<li class="seperate"></li>
+									<li class="comment"><a href="{{url}}#disqus_thread" data-disqus-identifier="ghost-{{id}}">Comments</a></li>
+								</ul>
+							</div>
+							{{#if image}}
+								<div class="post-image-wrap content_row" style="background-image:url({{image}});"></div>
+							{{/if}}
+							<div class="post-content">
+								{{content}}
+							</div>
+							<div class="post-bottom">
+								{{#if tags}}
+									<div class="single-tag-list">
+										<span class="single-tag-list-title">Tags:</span>
+										{{tags separator=", "}}
+									</div>
+								{{/if}}
+								<div class="post-share">
+									<ul>
+										<li class="title">Share:</li>
+										<li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://twitter.com/home?status={{url absolute="true"}}%20{{tags prefix="%23" separator="%20%23" autolink="false"}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="https://plus.google.com/share?url={{url absolute="true"}}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+										<li><a href="mailto:?&subject={{encode @blog.title}}%3A%20{{encode title}}&body={{encode title}}%0D%0A{{url absolute="true"}}%0D%0A%0D%0A{{excerpt words="45"}}%2E%2E%2E" target="_blank"><i class="fa fa-envelope"></i></a></li>
+										<li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}&summary={{excerpt words="45"}}&source={{@blog.title}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if image}}&media={{@blog.url}}{{image}}{{/if}}&description={{excerpt words="20"}}" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+										<li><a href="http://www.tumblr.com/share/link?url={{url absolute="true"}}&name={{encode title}}&description={{excerpt words="45"}}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+										<li><a href="http://www.reddit.com/submit/?url={{url absolute="true"}}&title={{encode title}}" target="_blank"><i class="fa fa-reddit"></i></a></li>
+										<li><a href="https://vk.com/share.php?url={{url absolute="true"}}&title={{encode title}}&description={{excerpt words="45"}}{{#if image}}&image={{@blog.url}}{{image}}{{/if}}&noparse=true" target="_blank"><i class="fa fa-vk"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</article>
+					{{! POST END }}
+					{{! POST NAVIGATION START }}
+					<div class="post-bottom-element">
+						<div class="post-nav">
+							<nav>
+								<ul class="pager">
+									{{#next_post}}
+									<li class="previous">
+										<div>
+											<h4>&lt; Previous Post</h4>
+											<a class="img"{{#if image}} style="background-image:url({{image}});"{{/if}} href="{{url}}"></a>
+											{{#foreach tags}}
+												<div class="category"><a href="{{url}}">{{name}}</a></div>
+											{{/foreach}}
+											<h3><a href="{{url}}" rel="prev">{{title}}</a></h3>
+										</div>
+									</li>
+									{{/next_post}}
+									{{#prev_post}}
+									<li class="next">
+										<div>
+											<h4>Next Post &gt;</h4>
+											<a class="img"{{#if image}} style="background-image:url({{image}});"{{/if}} href="{{url}}"></a>
+											{{#foreach tags}}
+												<span class="category"><a href="{{url}}">{{name}}</a></span>
+											{{/foreach}}
+											<h3><a href="{{url}}" rel="next">{{title}}</a></h3>
+										</div>
+									</li>
+									{{/prev_post}}
+								</ul>
+							</nav>
+						</div>
+					</div>
+					{{! POST NAVIGATION END }}
+					{{! POST RELATED START }}
+					{{#if @labs.publicAPI}}
+						{{#get "posts" include="tags" filter="id:-{{id}}+tags:[{{tags[*].slug}}]" limit="3"}}
+							<div class="post-bottom-element">
+								<div class="post-related">
+									<div class="widget-title">
+										<h4>You May Also Like</h4>
+									</div>
+									<div class="post-related-row">
+										{{#foreach posts}}
+											<div class="col-sm-4 col-xs-12">											
+												<a class="image" href="{{url}}"{{#if image}} style="background-image:url({{image}});"{{/if}}></a>
+												{{#foreach tags}}
+													<a class="category" href="{{url}}">{{name}}</a>
+												{{/foreach}}
+												<h3>{{title}}</h3>											
+											</div>
+										{{/foreach}}
+									</div>
+								</div>
+							</div>
+						{{/get}}
+					{{/if}}
+					{{! POST RELATED END }}
+					{{! POST AUTHOR ABOUT START }}
+					{{#if author}}
+						{{#author}}
+							<div class="post-bottom-element">
+								<div class="post-author">
+									<aside class="about-author">
+										<div class="about-widget-image" style="background-image:url({{#if cover}}{{cover}}{{else}}{{asset "img/post-about-bg.jpg"}}{{/if}})">
+											{{#if image}}<img src="{{image}}" alt="{{name}}'s Picture">{{/if}}
+										</div>
+										<div class="about-content">
+											<h2><a href="{{url}}">{{name}}</a></h2>
+											{{#if bio}}
+											  <p>{{{bio}}}</p>
+											{{/if}}
+											<div class="author-social-link">
+												<ul>
+												{{#if facebook}}
+													<li><a href="{{facebook_url}}" title="{{name}}'s Facebook Page" target="_blank"><i class="fa fa-facebook"></i></a></li>
+												{{/if}}
+												{{#if twitter}}
+													<li><a href="{{twitter_url}}" title="{{name}}'s Twitter Page" target="_blank"><i class="fa fa-twitter"></i></a></li>
+												{{/if}}
+												{{#if location}}
+													<li>
+														<i class="fa fa-map-marker"></i><span class="author-location icon-location">{{location}}</span>
+													</li>
+												{{/if}}
+												{{#if website}}
+													<li>
+														<a href="{{website}}" title="{{name}}'s Web Page" target="_blank">
+															<i class="fa fa-link"></i><span>{{website}}</span>
+														</a>
+													</li>
+												{{/if}}
+												</ul>
+											</div>
+										</div>
+									</aside>
+								</div>
+							</div>
+						{{/author}}
+					{{/if}}
+					{{! POST AUTHOR ABOUT END }}
+					{{! COMMENT START }}
+					{{> "comments-disqus"}}
+					{{! COMMENT END }}
+				</div>
+				{{! POST LIST END }}
+			</div>
+			{{! LEFT CONTENT END }}
+			{{! RIGHT CONTENT START }}
+			<div class="col-sm-4 col-xs-12 right-content fixedrightSidebar">
+				{{! SIDEBAR START }}
+				<aside class="sidebar-general sidebar">
+					{{! WIDGET START }}
+					{{> "widgets/last-posts"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/tags"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/instagram"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/categories"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/newsletter"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/social-media"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/advertisement"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/facebook"}}
+					{{! WIDGET END }}
+
+					{{! WIDGET START }}
+					{{> "widgets/twitter"}}
+					{{! WIDGET END }}
+				</aside>
+				{{! SIDEBAR END }}
+			</div>
+			{{! RIGHT CONTENT END }}
+		</div>
+	</div>
+</div>
+{{/post}}
