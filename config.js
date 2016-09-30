@@ -70,15 +70,16 @@ mail: {
         urlSSL: websiteUrlSSL,
 
         // Visit http://support.ghost.org/mail for instructions
-        mail: {
-         transport: 'SMTP',
-         options: {
-             service: process.env.emailService,
-             auth: {
-                 user: process.env.emailUsername, // mailgun username
-                 pass: process.env.emailPassword  // mailgun password
-             }
-         }
+mail: {
+    transport: 'SMTP',
+    options: {
+        service: 'Gmail',
+        auth: {
+            user: 'nate@lemonaidrecruiting.com',
+            pass: 'T!mteb0w'
+        }
+    }
+
         },
         database: {
             client: 'sqlite3',
