@@ -41,7 +41,7 @@ mail: {
             pass: 'T!mteb0w'
         }
     }
-}
+},
 
         database: {
             client: 'sqlite3',
