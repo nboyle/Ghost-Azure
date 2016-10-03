@@ -98,7 +98,6 @@
 					</div>
 					{{! POST NAVIGATION END }}
 					{{! POST RELATED START }}
-					{{#if @labs.publicAPI}}
 						{{#get "posts" include="tags" filter="id:-{{id}}+tags:[{{tags[*].slug}}]" limit="3"}}
 							<div class="post-bottom-element">
 								<div class="post-related">
@@ -174,43 +173,27 @@
 			{{! RIGHT CONTENT START }}
 			<div class="col-sm-4 col-xs-12 right-content fixedrightSidebar">
 				{{! SIDEBAR START }}
-				<aside class="sidebar-general sidebar">
-					{{! WIDGET START }}
-					{{> "widgets/last-posts"}}
-					{{! WIDGET END }}
+					<aside class="sidebar-general sidebar">
+				        {{! WIDGET START }}
+						{{> "widgets/social-media"}}
+						{{! WIDGET END }}
+                        
+                        {{! WIDGET START }}
+						{{> "widgets/advertisement"}}
+						{{! WIDGET END }}
+                        
+                        {{! WIDGET START }}
+						{{> "widgets/last-posts"}}
+						{{! WIDGET END }}
 
-					{{! WIDGET START }}
-					{{> "widgets/tags"}}
-					{{! WIDGET END }}
+						{{! WIDGET START }}
+						{{> "widgets/tags"}}
+						{{! WIDGET END }}
 
-					{{! WIDGET START }}
-					{{> "widgets/instagram"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/categories"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/newsletter"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/social-media"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/advertisement"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/facebook"}}
-					{{! WIDGET END }}
-
-					{{! WIDGET START }}
-					{{> "widgets/twitter"}}
-					{{! WIDGET END }}
-				</aside>
+						{{! WIDGET START }}
+						{{> "widgets/categories"}}
+						{{! WIDGET END }}
+					</aside>
 				{{! SIDEBAR END }}
 			</div>
 			{{! RIGHT CONTENT END }}
