@@ -1658,7 +1658,6 @@ a img.aligncenter {
 
 .header .logo-area .header-logo img{
    max-height: 127px;
-   min-height: 127px;
 }
 
 .header .logo-area .header-social-media {
@@ -2215,10 +2214,10 @@ a img.aligncenter {
 
 .post-list article .post-image-wrap .image, .post-list article .post-wrapper .post-image-wrap {
 	display: block;
-    height: 535px;
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+   height: 535px;
+   background-position: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 
@@ -3885,6 +3884,10 @@ i.icon-shortcode {
 		font-size: 25px;
 	}
 
+   .post-list article .post-image-wrap .image, .post-list article .post-wrapper .post-image-wrap {
+      height: 335px;
+   }
+
 	.grid-home-content .post-list .post-grid {
 		float: none;
 		width: 100%;
@@ -4090,6 +4093,9 @@ i.icon-shortcode {
 	.header .sidebar-header {
 		width: 300px;
 	}
+   .post-list article .post-image-wrap .image, .post-list article .post-wrapper .post-image-wrap {
+      height: 235px;
+   }
 	
 	.sidebar-header .mulada-latest-posts-widget .image {
 		float: none;
@@ -4149,6 +4155,9 @@ i.icon-shortcode {
 }
 
 @media (max-width: 400px) {
+   .post-list article .post-image-wrap .image, .post-list article .post-wrapper .post-image-wrap {
+      height: 190px;
+   }
 	.post-nav .pager li img {
 		display:block;
 		width:100%;
