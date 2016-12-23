@@ -1,0 +1,76 @@
+<div class="wrapper-big header-outer">
+<table class="header-inner">
+<tr class="header">
+	<td class="prime header-category-search">
+		<div class="left category-drop">
+			<span class="trigger" onclick="openTag()">Browse tag</span>
+
+			<nav id="browseTags" class="label gradient overlay" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+				{{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+					<ul class="overlay-content desktop-overlay-content">
+						{{#foreach tags}}
+						<li><a href="{{@blog.url}}/tag/{{slug}}">{{name}} <small>{{count.posts}}</small></a></li>
+						{{/foreach}}
+					</ul>
+				{{/get}}
+
+				<a href="javascript:void(0)" class="closebtn" onclick="closeTag()">Close</a>
+			</nav>
+		</div>
+
+		<div class="left search-ghost">
+			<form class="input-group">
+				<input class="input-group-btn button" type="submit" value="search">
+				<input id="search-field" autocomplete="off" placeholder="Search article"/>
+			</form>
+
+			<div id="display-search">
+				<div id="ghost-search-results">&nbsp;</div>
+				<span class="ghost-search-close">Close</span>
+			</div>
+		</div>
+
+		{{#if @labs.subscribers}}
+		<div class="left ghost-subscribe">
+			<a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe now</a>
+		</div>
+		{{/if}}
+	</td>
+
+	<td class="prime header-logo" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+		<header class="logo" itemscope itemtype="http://schema.org/WPHeader">
+			{{#if @blog.logo}}
+				<h1 class="title site-title" itemprop="headline"><a class="site-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></h1>
+			{{else}}
+				<h1 class="title site-title" itemprop="headline"><a title="{{@blog.title}}" href="{{@blog.url}}" itemprop="headline">{{{@blog.title}}}</a></h1>
+			{{/if}}
+		</header>
+	</td>
+
+	<td class="prime header-navigation-social">
+		<div class="right menu-drop">
+			<span class="trigger" onclick="openMenu()">Menu</span>
+
+			<div id="browseMenu" class="gradient overlay">
+				<nav class="label overlay-content desktop-overlay-content" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+					{{navigation}}
+				</nav>
+
+				<div class="label overlay-content mobile-overlay-content">
+					{{> mobile-navigation}}
+				</div>
+
+				<a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">Close</a>
+			</div>
+		</div>
+
+		<div class="right social-links">
+			<a class="icon-twitter" href="http://twitter.com/biyanpasau">Twitter</a>
+			<a class="icon-facebook" href="http://facebook.com/biyanpasau">Facebook</a>
+			<a class="icon-instagram" href="http://instagram.com/heybiyan">Instagram</a>
+		</div>
+	</td>
+</tr>
+</table>
+</div>
+

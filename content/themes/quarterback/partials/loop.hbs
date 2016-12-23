@@ -1,0 +1,27 @@
+{{! Archive loop - Home, Tag and Author templates }}
+
+<ul class="main">
+{{#foreach posts}}
+<li class="clearfix {{post_class}}" itemscope itemtype="http://schema.org/BlogPosting">
+	{{#if image}}
+	<a class="post-cover" href="{{{url}}}" rel="bookmark" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="background-image: url({{image}})">
+		<img itemprop="url" src="{{image}}" style="display: none;">
+	</a>
+	{{/if}}
+
+	<div class="post-content">
+		<ul class="label post-header">
+			<li class="post-date" itemprop="datePublished">{{date format='MMM DD, YYYY'}}</li>
+			<li class="post-tags">{{#if tags}}{{tags separator=", "}}{{else}}Uncategorized{{/if}}</li>
+		</ul>
+
+		<h2 class="title post-title" itemprop="headline"><a rel="bookmark" href="{{{url}}}" itemprop="url">{{title}}</a></h2>
+
+		<section class="post-body">
+			<p itemprop="articleBody" itemprop="text">{{excerpt characters="160"}}...</p>
+			<a class="label jump-link" rel="bookmark" href="{{{url}}}" itemprop="url"><span>Read More</span></a>
+		</section>
+	</div>
+</li>
+{{/foreach}}
+</ul>

@@ -1,0 +1,17 @@
+<nav class="clearfix blog-pager regular-pagination clearfix">
+	{{#if prev}}
+		<a class="left label newer-posts" href="{{page_url prev}}">&lsaquo; Newer</a>
+	{{/if}}
+
+	{{#if next}}
+		<a class="right label older-posts" href="{{page_url next}}">Older &rsaquo;</a>
+	{{/if}}
+
+	<span class="page-number">Page {{page}} of {{pages}}</span>
+</nav>
+
+<nav class="blog-pager infinitescroll-pagination clearfix">
+	{{#if next}}
+		<a class="label next-posts" href="{{page_url next}}">Load More Article</a>
+	{{/if}}
+</nav>

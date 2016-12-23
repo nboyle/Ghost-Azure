@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{! The main content area on the homepage }}
+<div class="clearfix main-outer main-with-sidebar" id="homepage" data-sticky_parent>
+	<main class="left main-inner" data-sticky_column role="main" itemscope itemtype="http://schema.org/Blog">
+		<nav class="clearfix wrapper-big gradient breadcrumbs" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+			<div class="left">
+				<a href="{{@blog.url}}" title="blog homepage">{{{@blog.title}}}</a>
+				<span>&rsaquo;</span>
+				<span>{{@blog.description}}</span>
+			</div>
+			<div class="right category-drop">
+				<span class="trigger browse-tag" onclick="openTag()">Browse tag</span>
+			</div>
+		</nav>
+
+		{{> loop}}
+
+		{{pagination}}
+	</main>
+
+	<aside class="right sidebar-outer" id="stick" data-sticky_column>
+		{{> sidebar}}
+	</aside>
+</div>

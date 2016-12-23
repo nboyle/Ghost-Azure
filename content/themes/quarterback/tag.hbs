@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{! The main content area on the homepage }}
+<div class="clearfix main-outer main-with-sidebar" id="homepage" data-sticky_parent>
+	<main class="left main-inner" data-sticky_column role="main" itemscope itemtype="http://schema.org/Blog">
+		<nav class="clearfix wrapper-big gradient breadcrumbs" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+			<div class="left">
+				<a href="{{@blog.url}}" title="blog homepage">{{{@blog.title}}}</a>
+				<span>&rsaquo;</span>
+				<span>{{tag.name}}</span>
+			</div>
+			<div class="right category-drop">
+				<span class="trigger browse-tag" onclick="openTag()">Browse tag</span>
+			</div>
+		</nav>
+
+		<aside class="clearfix gradient insight-panel" id="tag-insight-panel" itemscope itemtype="http://schema.org/Person">
+			<div class="insight-panel-container">
+				<figure class="insight-panel-avatar" style="background-image: url({{asset "images/icon-tag.png"}})" itemprop="image" content="{{asset "images/icon-tag.png"}}"></figure>
+				<ul class="insight-panel-data">
+					<li class="insight-panel-data-name" itemprop="name">{{tag.name}}</li>
+					<li class="insight-panel-data-posts label">
+						<div class="left content-published">{{plural pagination.total empty='No posts' singular='% post' plural='% posts'}}</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+
+		{{> loop}}
+	</main>
+
+	<aside class="right sidebar-outer" id="stick" data-sticky_column>
+		{{> sidebar}}
+	</aside>
+</div>

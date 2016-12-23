@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<div class="clearfix main-outer" id="singlepage">
+	<main class="main-inner" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+		<nav class="clearfix wrapper-big gradient breadcrumbs" role="navigation">
+			<div class="left">
+				<a href="{{@blog.url}}" title="blog homepage">{{{@blog.title}}}</a>
+				<span>&rsaquo;</span>
+				<span>{{title}}</span>
+			</div>
+
+			<ul class="right">
+				<li style="background-image: url({{author.image}})" itemprop="image" content="{{author.image}}">&nbsp;</li>
+				<li>{{#author}}Posted by <a class="author-name" href="{{url}}" itemprop="name">{{name}}</a>{{/author}}</li>
+			</ul>
+
+			<div class="right category-drop">
+				<span class="trigger browse-tag" onclick="openTag()">Browse tag</span>
+			</div>
+		</nav>
+
+		{{#if image}}
+			<div role='banner' class="post-cover" style="background-image: url({{image}})">&nbsp;</div>
+		{{/if}}
+
+		<div class="main">
+			<article class="{{post_class}} clearfix" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+				<div class="post-outer">
+					<ul class="label post-header">
+						<li class="post-date" itemprop="datePublished">{{date format='MMM DD, YYYY'}}</li>
+						<li class="post-tags">{{#if tags}}{{tags separator=", "}}{{else}}Uncategorized{{/if}}</li>
+					</ul>
+
+					<h2 class="title post-title" itemprop="headline">{{title}}</h2>
+
+					<section class="clearfix post-body" itemprop="text">{{content}}</section>
+				</div>
+			</article>
+
+
+			<div class="sharing-button-outer">
+				<ul class="label sharing-button">
+					<li class="icon-facebook"><a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a></li>
+					<li class="icon-twitter"><a target="_blank" href="https://twitter.com/share?text={{title}}&amp;url={{url absolute="true"}}">Twitter</a></li>
+					<li class="icon-pinterest"><a target="_blank" href="http://pinterest.com/pin/create/link/?url={{url absolute="true"}}">Pinterest</a></li>
+					<li class="icon-email"><a target="_blank" href="mailto:email@example.com?subject=Read%20{{title}} on {{@blog.title}}.com">Email</a></li>
+				</ul>
+			</div>
+		</div>
+	</main>
+</div>
+
+<div class="comment-outer">
+	<div class="comment-inner">
+		{{> disqus}}
+	</div>
+</div>
+
+{{/post}}

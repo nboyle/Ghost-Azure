@@ -1,0 +1,19 @@
+<table id="mobile-navigation" class="mobile-navigation">
+	<tr>
+		<th class="mobile-navigation-title"><span>Navigation</span></th>
+		<th class="mobile-category-title"><span>Browse category</span></th>
+	</tr>
+
+	<tr>
+		<td class="mobile-navigation-menu">{{navigation}}</td>
+		<td class="mobile-category-drop">
+			{{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+				<ul>
+					{{#foreach tags}}
+					<li><a href="{{@blog.url}}/tag/{{slug}}">{{name}} <small>{{count.posts}}</small></a></li>
+					{{/foreach}}
+				</ul>
+			{{/get}}
+		</td>
+	</td>
+</table>

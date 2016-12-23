@@ -1,0 +1,46 @@
+{{! Full screen navigation}}
+<script>
+	/* Tags */
+	function openTag() {
+		document.getElementById("browseTags").style.height = "100%";
+	}
+	function closeTag() {
+		document.getElementById("browseTags").style.height = "0%";
+	}
+
+	/* Navigation */
+	function openMenu() {
+		document.getElementById("browseMenu").style.height = "100%";
+	}
+	function closeMenu() {
+		document.getElementById("browseMenu").style.height = "0%";
+	}
+</script>
+
+
+{{! Instagram feed}}
+<script>
+	var userFeed = new Instafeed({
+		limit: 4,
+		get: 'user',
+		userId: 'YOUR-USER-ID',
+		accessToken: 'YOUR-ACCESS-TOKEN'
+	});
+	userFeed.run();
+</script>
+
+
+{{! Flickr feed}}
+<script>
+	$('#flickr_wrap').jflickrfeed({
+		limit: 4,
+		qstrings: {
+			id: 'YOUR-USER-ID' /* * * get your ID on idgettr.com * * */
+		},
+		itemTemplate: '<a class="flickr_badge_image" href="\{{link}}"><img src="\{{image_s}}" alt="\{{title}}" /></a>'
+	});
+</script>
+
+
+{{! Disqus comment count}}
+{{! DISQUS here | Simply overwrite this line}}

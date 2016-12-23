@@ -1,0 +1,189 @@
+@media screen and (max-width: 1150px) {
+	.header .category-drop,
+	.overlay .desktop-overlay-content {
+		display: none;
+	}
+	.overlay .mobile-overlay-content {
+		display: block;
+	}
+	.header .search-ghost,
+	.header .ghost-subscribe {
+		padding-left: 0;
+		margin-left: 0;
+		border-left: 0;
+	}
+}
+
+@media screen and (max-width: 1040px) {
+	.main-with-sidebar {
+		padding-right: 0;
+	}
+	.main-outer .post-cover {
+		height: 400px;
+	}
+	#singlepage .breadcrumbs > .right {
+		float: left;
+	}
+	#singlepage .post-body blockquote {
+		margin-right: 0;
+	}
+	.header .social-links,
+	.breadcrumbs .category-drop,
+	.main-with-sidebar .sidebar-outer,
+	#singlepage .breadcrumbs > div.left {
+		display: none;
+	}
+	.overlay .overlay-content a {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	body {
+		font-size: 13px;
+		line-height: 1.8em;
+	}
+	.header-inner .header .header-category-search,
+	.header-inner .header > p {
+		display: none;
+	}
+	.header .header-logo {
+		text-align: left;
+	}
+	.main-outer .post,
+	.main-with-sidebar .post:nth-of-type(3n+1) .post-content,
+	.main-inner .blog-pager,
+	.comment-outer .comment-inner {
+		width: calc(100% - 100px);
+	}
+	.main-with-sidebar .post {
+		padding-left: 0;
+	}
+	.main-with-sidebar .post .post-cover {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 300px;
+		margin-bottom: 30px;
+	}
+	.main-outer .post-cover,
+	.main-with-sidebar .post:nth-of-type(3n+1) .post-cover {
+		height: 350px;
+	}
+	#singlepage .post-body blockquote {
+		width: 100%;
+		float: none;
+		margin-left: 0;
+	}
+	.sharing-button-outer {
+		position: relative;
+		width: auto;
+		margin-bottom: 30px;
+	}
+	.sharing-button-outer:before {
+		content: 'Share via:';
+		float: left;
+		margin-right: 20px;
+		font: normal normal 13px/1.6em 'Fjalla One', 'Helvetica Neue', Arial, Sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-bottom: 1px solid #ddd;
+	}
+	.sharing-button li {
+		float: left;
+		margin: -3px 10px 0 0;
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper-big {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.insight-panel {
+		padding: 30px;
+	}
+	.insight-panel .insight-panel-container {
+		padding-left: 100px;
+	}
+	.insight-panel .insight-panel-avatar {
+		margin-left: -100px;
+	}
+	.overlay .overlay-content {
+		width: calc(100% - 60px);
+		margin: 0 30px;
+	}
+	.overlay .overlay-content a {
+		font-size: 14px;
+	}
+	.overlay .mobile-overlay-content {
+		top: 30px;
+	}
+	.overlay .mobile-navigation th span {
+		font-size: 10px;
+	}
+	.overlay .mobile-navigation .mobile-navigation-title,
+	.overlay .mobile-navigation .mobile-navigation-menu {
+		padding-right: 30px;
+	}
+	.overlay .mobile-navigation .mobile-category-title,
+	.overlay .mobile-navigation .mobile-category-drop {
+		padding-left: 30px;
+	}
+	.overlay .mobile-navigation .mobile-navigation-menu li {
+		margin-bottom: 20px;
+	}
+	.overlay .mobile-navigation .mobile-category-drop li {
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	.overlay .mobile-navigation .mobile-category-drop li small {
+		display: none;
+	}
+	.overlay .closebtn {
+		top: 32px;
+		right: 32px;
+		width: 10px;
+		height: 10px;
+	}
+	.main-outer .post,
+	.main-with-sidebar .post:nth-of-type(3n+1) .post-content,
+	.main-inner .blog-pager,
+	.comment-outer .comment-inner {
+		width: calc(100% - 60px);
+	}
+	.main-with-sidebar .post .post-cover {
+		height: 200px;
+	}
+	.main-outer .post-cover,
+	.main-with-sidebar .post:nth-of-type(3n+1) .post-cover {
+		height: 250px;
+	}
+	.main-outer .post:nth-of-type(3n+1) .post-title,
+	.main-outer .post .post-title {
+		font-size: 42px;
+		line-height: 1.4em;
+	}
+	.main-with-sidebar .post .post-title {
+		font-size: 27px;
+	}
+	.main-with-sidebar .post:nth-of-type(3n+1) .post-body {
+		font-size: 13px;
+		line-height: 1.8em;
+	}
+	#singlepage .post-body blockquote {
+		font-size: 22px;
+		line-height: 1.3em;
+	}
+	.credit > .left,
+	.credit > .right {
+		float: none;
+		text-align: center;
+		margin: 10px;
+	}
+	.sharing-button-outer {
+		left: 30px;
+	}
+}
