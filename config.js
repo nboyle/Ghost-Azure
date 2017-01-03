@@ -28,7 +28,7 @@ mail: {
         service: 'Sendgrid',
         auth: {
             user: 'lemonaidapp',
-            pass: 'T!mteb0w'
+            pass: 'T!mteb0w69'
         }
     }
 },
@@ -65,7 +65,7 @@ mail: {
         service: 'Sendgrid',
         auth: {
             user: 'lemonaidapp',
-            pass: 'T!mteb0w'
+            pass: 'T!mteb0w69'
         }
     }
 },
