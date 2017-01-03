@@ -3,7 +3,7 @@
 // Documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    websiteUrl = 'https://blog.lemonaidrecruiting.com',
+    websiteUrl = 'http://blog.lemonaidrecruiting.com',
     config;
 
 // Azure Feature
@@ -25,13 +25,13 @@ config = {
 mail: {
     transport: 'SMTP',
     options: {
-        service: 'Sendgrid',
+        service: 'Gmail',
         auth: {
-            user: 'lemonaidapp',
+            user: 'nate@lemonaidrecruiting.com',
             pass: 'T!mteb0w'
         }
     }
-},
+}
 
         database: {
             client: 'sqlite3',
