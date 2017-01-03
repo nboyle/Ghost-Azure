@@ -25,9 +25,9 @@ config = {
 mail: {
     transport: 'SMTP',
     options: {
-        service: 'Gmail',
+        service: 'Sendgrid',
         auth: {
-            user: 'nate@lemonaidrecruiting.com',
+            user: 'lemonaidapp',
             pass: 'T!mteb0w'
         }
     }
@@ -62,9 +62,9 @@ mail: {
 mail: {
     transport: 'SMTP',
     options: {
-        service: 'Gmail',
+        service: 'Sendgrid',
         auth: {
-            user: 'nate@lemonaidrecruiting.com',
+            user: 'lemonaidapp',
             pass: 'T!mteb0w'
         }
     }
