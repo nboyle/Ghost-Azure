@@ -31,7 +31,7 @@ mail: {
             pass: 'T!mteb0w'
         }
     }
-}
+},
 
         database: {
             client: 'sqlite3',
@@ -62,9 +62,9 @@ mail: {
 mail: {
     transport: 'SMTP',
     options: {
-        service: 'Sendgrid',
+        service: 'Gmail',
         auth: {
-            user: 'lemonaidapp',
+            user: 'nate@lemonaidrecruiting.com',
             pass: 'T!mteb0w'
         }
     }
