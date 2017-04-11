@@ -3,7 +3,7 @@
 // Documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    websiteUrl = process.env.websiteUrl,
+    websiteUrl = 'http://collegerecruitingapp.com',
     websiteUrlSSL = process.env.websiteUrlSSL,
     config;
 
@@ -35,10 +35,10 @@ config = {
          mail: {
              transport: 'SMTP',
              options: {
-                 service: process.env.emailService,
+                 service: 'Sendgrid',
                  auth: {
-                     user: process.env.emailUsername, // mailgun username
-                     pass: process.env.emailPassword  // mailgun password
+                     user: 'lemonaidapp', // mailgun username
+                     pass: 'T!mteb0w69'  // mailgun password
                  }
              },
              from: process.env.emailFromAddress // 'from' address when sending emails
@@ -74,10 +74,10 @@ config = {
         mail: {
          transport: 'SMTP',
          options: {
-             service: process.env.emailService,
+             service: 'Sendgrid',
              auth: {
-                 user: process.env.emailUsername, // mailgun username
-                 pass: process.env.emailPassword  // mailgun password
+                 user: 'lemonaidapp', // mailgun username
+                 pass: 'T!mteb0w69'  // mailgun password
              }
          },
          from: process.env.emailFromAddress // 'from' address when sending emails
