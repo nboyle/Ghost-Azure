@@ -3,7 +3,7 @@
 // Documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    websiteUrl = 'http://blog.lemonaidrecruiting.com',
+    websiteUrl = 'http://collegerecruitingapp.com',
     config;
 
 // Azure Feature
