@@ -3,7 +3,8 @@
 // Documentation can be found at http://support.ghost.org/config/
 
 var path = require('path'),
-    websiteUrl = 'http://collegerecruitingapp.com',
+    websiteUrl = process.env.websiteUrl,
+    websiteUrlSSL = process.env.websiteUrlSSL,
     config;
 
 // Azure Feature
@@ -15,6 +16,15 @@ if (!websiteUrl || websiteUrl === '' ||  websiteUrl.length === 0) {
     console.log(websiteUrl);
 }
 
+if (!websiteUrlSSL || websiteUrlSSL === '' ||  websiteUrlSSL.length === 0) {
+    //in prod mode - forceSSL is true - so we can use the azure issued cert
+    // web apps supply some default env variables - WEBSITE_SITE_NAME and WEBSITE_HOSTNAME
+    // represent the siteName and the full DNS name respectively.
+    // using the WEBSITE_HOSTNAME we don't have to append anything and would work in ASE too.
+    websiteUrlSSL = 'https://' + process.env.WEBSITE_HOSTNAME;
+    console.log(websiteUrlSSL);
+}
+
 config = {
     // ### Development **(default)**
     development: {
@@ -22,16 +32,17 @@ config = {
         url: websiteUrl,
 
         // Visit http://support.ghost.org/mail for instructions
-mail: {
-    transport: 'SMTP',
-    options: {
-        service: 'Sendgrid',
-        auth: {
-            user: 'lemonaidapp',
-            pass: 'T!mteb0w69'
-        }
-    }
-},
+         mail: {
+             transport: 'SMTP',
+             options: {
+                 service: process.env.emailService,
+                 auth: {
+                     user: process.env.emailUsername, // mailgun username
+                     pass: process.env.emailPassword  // mailgun password
+                 }
+             },
+             from: process.env.emailFromAddress // 'from' address when sending emails
+         },
 
         database: {
             client: 'sqlite3',
@@ -57,18 +68,20 @@ mail: {
     // Configure your URL and mail settings here
     production: {
         url: websiteUrl,
+        urlSSL: websiteUrlSSL,
 
         // Visit http://support.ghost.org/mail for instructions
-mail: {
-    transport: 'SMTP',
-    options: {
-        service: 'Sendgrid',
-        auth: {
-            user: 'lemonaidapp',
-            pass: 'T!mteb0w69'
-        }
-    }
-},
+        mail: {
+         transport: 'SMTP',
+         options: {
+             service: process.env.emailService,
+             auth: {
+                 user: process.env.emailUsername, // mailgun username
+                 pass: process.env.emailPassword  // mailgun password
+             }
+         },
+         from: process.env.emailFromAddress // 'from' address when sending emails
+        },
         database: {
             client: 'sqlite3',
             connection: {
